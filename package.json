@@ -1,0 +1,19 @@
+{
+  "name": "practice-typescript",
+  "author": "HikaruEgashira <shighten@gmail.com>",
+  "private": true,
+  "devDependencies": {
+    "@types/jest": "^26.0.13",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.3.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
+  },
+  "scripts": {
+    "dev": "ts-node",
+    "test": "jest"
+  },
+  "dependencies": {
+    "fp-ts": "^2.8.2"
+  }
+}
