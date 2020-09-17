@@ -14,7 +14,7 @@ const sleepTask = (msec: number): T.Task<number> => async () => {
 /**
  * [3, 2, 1] => [300, 200, 100]
  */
-export async function taskExample(arr: Array<number>) {
+export async function taskExample(arr: Array<number>): Promise<Array<number>> {
   const sleepTasks = arr.map((num) => sleepTask(100 * num));
   const sleepSeqTasks = A.array.sequence(T.taskSeq)(sleepTasks);
 
@@ -25,7 +25,9 @@ export async function taskExample(arr: Array<number>) {
 /**
  * [3, 2, 1] => [300, 200, 100]
  */
-export async function promiseAllExample(arr: Array<number>) {
+export async function promiseAllExample(
+  arr: Array<number>
+): Promise<Array<number>> {
   const promiseNumbers = arr.map(async (num) => await sleep(100 * num));
 
   const numbers = await Promise.all(promiseNumbers);
